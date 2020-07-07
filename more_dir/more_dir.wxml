@@ -1,0 +1,59 @@
+<view>
+
+  <view class="dir_text" wx:if="{{!showModalStatus && isNull==false}}" style="{{A_Style}}" bindtap="showDir">{{dirText}}</view>
+  <view class="dir_text" wx:if="{{isNull==true}}" style="{{A_Style}}" bindtap="showDir">{{NullText}}</view>
+  <!--mask-->
+  <view class="drawer_screen"  data-statu="close" wx:if="{{showModalStatus}}"></view>
+  <!--content-->
+  <!--使用animation属性指定需要执行的动画-->
+  <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="drawer_content">
+
+
+      <view class="list">
+        <view class="section__title">省份/地区</view>
+        <picker  mode="selector"  bindchange="bindOneChange" range-key="name" value="{{dirSelectIndex['one']}}" range="{{dirArrOne}}">
+          <view class="picker">
+            当前选择：{{dirArrOne[dirSelectIndex['one']].name}}
+          </view>
+        </picker>
+      </view>
+
+
+      <view class="list">
+        <view class="section__title">城市</view>
+        <picker  mode="selector"  bindchange="bindTwoChange" range-key="name" value="{{dirSelectIndex['two']}}" range="{{dirArrTwo}}">
+          <view class="picker">
+            当前选择：{{dirArrTwo[dirSelectIndex['two']].name}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="list">
+        <view class="section__title">区/县</view>
+        <picker  mode="selector"  bindchange="bindThreeChange" range-key="name" value="{{dirSelectIndex['three']}}" range="{{dirArrThree}}">
+          <view class="picker">
+            当前选择：{{dirArrThree[dirSelectIndex['three']].name}}
+          </view>
+        </picker>
+      </view>
+
+
+      <view class="list">
+        <view class="section__title">街道/镇</view>
+        <picker  mode="selector"  bindchange="bindFourChange" range-key="name" value="{{dirSelectIndex['four']}}" range="{{dirArrFour}}">
+          <view class="picker">
+            当前选择：{{dirArrFour[dirSelectIndex['four']].name}}
+          </view>
+        </picker>
+      </view>
+
+
+      <view class="layout-vertical view-save" bindtap="save" style="background:#37c2bc">确定</view>
+
+    </view>
+  </view>
+
+
+</view>
