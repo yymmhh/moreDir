@@ -3,6 +3,7 @@
   <view class="userinfo">
     <more_dir id="more_dir" DirString="{{DistrictValue}}" isNull="{{DistrictValue==null}}" A_Style="{{DistrictValue==null ? 'color:#c7c7c7' : ''}}" NullText="请选择地区"  bind:callSave="SetDir"></more_dir>
   </view>
+
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

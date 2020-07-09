@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+ <button bindtap="check">去选择地区</button>
+</view>

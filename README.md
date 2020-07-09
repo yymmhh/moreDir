@@ -1,7 +1,10 @@
 # 微信小程序地区4级选择器
 
- 适用于原生微信小程序和ui-app微信小程序<br />![github_more_dir_1.png](https://cxt.cdn.wlphp.cn/github_more_dir_1.png)<br />![github_more_dir_2.png](https://cxt.cdn.wlphp.cn/github_more_dir_2.png
-)<br />使用:<br />需要接口返回地区数据然后在存入 Storage中<br />![WX20200707-113827@2x.png](https://cxt.cdn.wlphp.cn/github_more_dir_3.png)<br />
+ 适用于原生微信小程序和ui-app微信小程序,开箱即用<br />![github_more_dir_1.png](https://cxt.cdn.wlphp.cn/github_more_dir_1.png)<br />![github_more_dir_2.png](https://cxt.cdn.wlphp.cn/github_more_dir_2.png
+)
+
+
+
 <br />先引入
 ```json
 {
@@ -29,4 +32,7 @@ js中定义一个地区数据
 aixDistrictValue:"10.108.1146.1235"
 ```
 
+##uni-app 
+
+使用需要字节把数据存到Storage中,可以把3MB地区数据分20个键存入
 
