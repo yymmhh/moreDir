@@ -36,7 +36,7 @@ Component({
 
     showModalStatus: false,
 
-    config_districts:wx.getStorageSync("district_config"),        //地区的数据
+    config_districts:app.globalData.district_config,        //地区的数据
 
     dirArrOne:[],               //第一列的地区数据
     dirArrTwo:[],               //第二列的地区数据
@@ -60,7 +60,7 @@ Component({
 
   lifetimes: {
       ready() {
-
+        this.data.config_districts=app.globalData.district_config
         this._init(this.data.DirString)
 
       }
@@ -78,7 +78,7 @@ Component({
       this.setData({showModalStatus:!this.data.showModalStatus});
     },
     setDirText(){
-      console.log(this.data)
+
       //拼接
       var text= this.data.dirArrOne[this.data.dirSelectIndex["one"]].name+"-"
                 +this.data.dirArrTwo[this.data.dirSelectIndex["two"]].name+"-"
@@ -123,11 +123,9 @@ Component({
         ids,
       }
       console.log(params)
-      try{
-        this.triggerEvent('callSave',params)
-      }catch (e) {
-        console.warn("父级没有定义")
-      }
+
+      //此处捕获异常会卡顿
+      this.triggerEvent('callSave',params)
 
     },
     _init(default_dir_config){
@@ -150,6 +148,9 @@ Component({
 
       if (default_dir_config_arr[3]==null){
         default_dir_config_arr[3]=0;
+      }
+      if (default_dir_config_arr[2]==null){
+        default_dir_config_arr[2]=0;
       }
 
 
@@ -199,8 +200,8 @@ Component({
 
       //第三个可能会不存在，比如儋州
       //算了不管有没有都把不限插进去
-
       three_temp.unshift(null_arr)
+
 
 
       if (three_temp.length>0){

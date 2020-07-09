@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "more_dir": "../../components/more_dir/more_dir"
+  }
+}
